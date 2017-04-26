@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>angularjs双向绑定</title>
+    <script type="text/javascript" src="src/lib/angular.min.js"></script>
+</head>
+<body>
+   <div>
+       your name:<input ng-model="yourname" placeholder="请输入名字"/>
+       <hr>
+       Hello {{yourname || 'World'}}!
+       <p>Nothing here {{'yet' + '!'}}</p>
+   </div>
+</body>
+</html>
