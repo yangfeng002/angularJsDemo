@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>显示隐藏页面</title>
+</head>
+<body ng-app="myApp">
+  <div class="main" ng-controller="myCtrl">
+      <button ng-click="togglePage(true)">商品详情</button>
+      <button ng-click="togglePage(false)">累计评价</button>
+      <h1 ng-show="isShowPage">商品详情页面</h1>
+      <h1 ng-show="!isShowPage" ng-hide="isShowPage">累计评价页面</h1>
+  </div>
+  <script type="text/javascript" src="src/lib/angular.min.js"></script>
+  <script type="text/javascript" src="src/js/controllers.js"></script>
+</body>
+</html>

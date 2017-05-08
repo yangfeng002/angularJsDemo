@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤器使用</title>
+</head>
+<body ng-app="myApp">
+<!--过滤器既可以在模板中使用，也可以在控制器和业务层使用，采用参数的方式注入进来-->
+<div class="main" ng-controller="myFilterCtrl">
+  <h1>{{colors | json}}</h1>
+  <h1>{{price | currency:'人民币￥':1}}</h1>
+    <p>{{num}}</p>
+    <h3> {{datetime | date : 'yyyy-MM'}}</h3>
+</div>
+<script type="text/javascript" src="src/lib/angular.js"></script>
+<script type="text/javascript" src="src/js/controllers.js"></script>
+</body>
+</html>

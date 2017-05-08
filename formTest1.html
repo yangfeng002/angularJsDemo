@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>脏值检测</title>
+</head>
+<body ng-app="myApp">
+   <div class="main" ng-controller="myCtrl">
+       <form name="myForm">
+           <input type="text" name="userName" ng-model="username" ng-required="true">
+           <button ng-click="submit()">提交</button>
+       </form>
+   </div>
+   <script type="text/javascript" src="src/lib/angular.js"></script>
+   <script type="text/javascript">
+       angular.module('myApp',[])
+               .controller('myCtrl', function ($scope) {
+                 $scope.submit = function () {
+                     //表单元素form的$dirty属性表示子元素是否有一个输入过，$valid表示所有子元素是否合法
+                     console.log($scope);
+                 }
+               })
+   </script>
+</body>
+</html>

@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="web">
 <head>
     <meta charset="UTF-8">
     <title>angularjs入门示例</title>
-    <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
-    <script type="text/javascript" src="src/lib/angular.min.js"></script>
+    <!--code维护的代码-->
+   <!-- <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>-->
+    <!--本地加载-->
+    <script type="text/javascript" src="src/lib/angular.js"></script>
 </head>
 <body>
-   <div class="main">
-     hello {{'world'}}
+   <div class="main" ng-controller="MsgCtrl" ng-init="hello='kitty'">
+       <!--view层-->
+        <input ng-model="msg" value="{{msg}}"/>
+        <h2 ng-bind="hello"></h2>
+        <h2 ng-bind="msg"></h2>
+         hello {{msg}}
    </div>
 </body>
+<script type="text/javascript" src="src/js/controllers.js"></script>
 </html>

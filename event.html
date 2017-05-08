@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angular事件</title>
+</head>
+<body ng-app="yourApp">
+   <div class="main" ng-controller="myCtrl">
+       <button ng-click="choose(colors[0])">{{colors[0]}}</button>
+       <button ng-click="choose(colors[1])">{{colors[1]}}</button>
+       <button ng-click="choose(colors[2])" ng-mouseover="">{{colors[2]}}</button>
+       <h2>{{result}}</h2>
+   </div>
+
+
+<script type="text/javascript" src="src/lib/angular.js"></script>
+<script type="text/javascript" src="src/js/controllers.js"></script>
+</body>
+</html>

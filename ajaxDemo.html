@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="web">
+<head>
+    <meta charset="UTF-8">
+    <title>和后台交互</title>
+</head>
+<body>
+<div  ng-controller="demoController">
+    <input type="text" ng-model="user.name" disabled="disabled"/>
+    <a href="javascript:void(0);" target="_blank" rel="nofollow" ng-click="getAjaxUser()">获取名字</a>
+</div>
+</body>
+<script type="text/javascript" src="src/lib/angular.js"></script>
+<script type="text/javascript" src="src/js/controllers.js"></script>
+</html>
