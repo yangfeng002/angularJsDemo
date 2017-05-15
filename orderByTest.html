@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>orderBy过滤器</title>
+</head>
+<body >
+<div class="main" ng-controller="myCtrl">
+    <h2>{{friends |orderBy:'age':true}}</h2>
+    <h2>{{friends |orderBy:['age','phone']}}</h2>
+</div>
+<script src="lib/angular.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+    angular.module('myApp',[])
+            .controller('myCtrl',function($scope){
+                $scope.friends = [
+                    {name: 'John',   phone: '555-1212',  age: 10},
+                    {name: 'Mary',   phone: '555-9876',  age: 19},
+                    {name: 'Mike',   phone: '555-4321',  age: 21},
+                    {name: 'Adam',   phone: '555-9678',  age: 29},
+                    {name: 'Julie',  phone: '555-8765',  age: 29}
+                ];
+            })
+</script>
+</body>
+</html>

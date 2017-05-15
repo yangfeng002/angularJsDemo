@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串过滤器</title>
+</head>
+<body >
+<div class="main" ng-controller="myCtrl">
+    <h2>{{num | number:6}}</h2>
+
+</div>
+<script src="lib/angular.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+    angular.module('myApp',[])
+            .controller('myCtrl',function($scope){
+               $scope.num = 12345678.12345678;
+            })
+</script>
+</body>
+</html>

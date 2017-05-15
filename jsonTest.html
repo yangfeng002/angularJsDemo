@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>json过滤器</title>
+</head>
+<body >
+<div class="main" ng-controller="myCtrl">
+    <h2 >{{jsonValue | json }}</h2>
+
+</div>
+<script src="lib/angular.js" type="text/javascript"></script>
+<script type="text/javascript">
+   //将对象转换成json字符串
+    angular.module('myApp',[])
+            .controller('myCtrl',function($scope){
+                $scope.jsonValue = {li:1}
+            })
+</script>
+</body>
+</html>

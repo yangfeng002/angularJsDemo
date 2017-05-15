@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串过滤器</title>
+</head>
+<body >
+<div class="main" ng-controller="myCtrl">
+    <h2>{{msg | lowercase}}</h2>
+    <h2>{{msg | uppercase}}</h2>
+    <h2>{{msg | limitTo:4:1}}</h2>
+    <h2>{{colors | limitTo:2:2}}</h2>
+</div>
+<script src="lib/angular.js" type="text/javascript"></script>
+<script type="text/javascript">
+    /*filter过滤器可以传递一个字符串参数、一个变量、一个函数（第一个参数表示数组成员，第二个参数表示索引值，第三个参数表示原数组）
+     * 函数的返回结果用来过滤，所以函数不能带括号
+     *
+     * */
+    angular.module('myApp',[])
+            .controller('myCtrl',function($scope){
+                $scope.msg = "hello world";
+                $scope.colors = ['red','green','blue','pink','yellow','black','yellowGreen'];
+            })
+</script>
+</body>
+</html>
