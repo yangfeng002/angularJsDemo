@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-style测试</title>
+    <style>
+    </style>
+</head>
+<body ng-app="myApp">
+<div class="main" ng-controller="myCtrl">
+    <button ng-click="getNum()">投骰子</button>
+    <h4>{{num}}</h4>
+
+    <span ng-style="{background: num>4 ? 'green' :'red'}">{{num}}</span>
+    <span ng-style="style">{{num}}</span>
+</div>
+<script src="src/lib/angular.js"></script>
+<script>
+    angular.module("myApp",[])
+            .controller("myCtrl", function ($scope,$timeout) {
+               $scope.getNum = function () {
+                   this.num = Math.ceil(Math.random()*6);
+                   this.style = {
+                       color:'#000'
+                   }
+               }
+            })
+</script>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-href/ng-src/ng-class 测试</title>
+    <style>
+        .red{
+            background: #dd3f5b;
+            padding:10px;
+        }
+        .green{
+            background:green;
+            padding:10px;
+        }
+        .font-white{
+            color: #fff;
+            padding:10px;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+<div class="main" ng-controller="myCtrl">
+    <!--ng-href指令-->
+    <a ng-href="{{site}}" target="_blank">百度</a>
+    <!--ng-src指令-->
+    <img ng-src="{{imgSrc}}">
+    <!--ng-class指令  可以是字符串-->
+    <button ng-click="getNum()">投骰子</button>
+    <h4>{{num}}</h4>
+    <span ng-class="{red:num<4,'green white-font':num>=4 }">{{num}}</span>
+
+</div>
+<script src="src/lib/angular.js"></script>
+<script>
+    angular.module("myApp",[])
+            .controller("myCtrl", function ($scope,$timeout) {
+                $timeout(function () {
+                    $scope.site = "www.baidu.com";
+                    $scope.imgSrc = "src/images/1.png";
+                },2000);
+               $scope.getNum = function () {
+                   this.num = Math.ceil(Math.random()*6);
+               }
+            })
+</script>
+    </body>
+</html>

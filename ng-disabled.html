@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-disabled</title>
+</head>
+<body ng-app="myApp">
+   <div class="main" ng-controller="myCtrl">
+       <input type="text" ng-disabled="isDisabled">
+       <button ng-click="toggle()">切换</button>
+       <br>
+   </div>
+
+<script src="src/lib/angular.js"></script>
+<script>
+    angular.module("myApp",[])
+            .controller("myCtrl", function ($scope) {
+                $scope.toggle = function () {
+                   $scope.isDisabled = !$scope.isDisabled;
+                }
+            })
+</script>
+</body>
+</html>

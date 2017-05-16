@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-if测试</title>
+</head>
+<body ng-app="myApp">
+<div class="main" ng-controller="myCtrl">
+   <button ng-click="changePage(true)">商品详情</button>
+   <button ng-click="changePage(false)">玩家评价</button>
+    <div ng-if="showFirst">商品详情页面</div>
+    <div ng-if="!showFirst">玩家评价页面</div>
+</div>
+
+<script src="src/lib/angular.js"></script>
+<script>
+    angular.module("myApp",[])
+            .controller("myCtrl", function ($scope) {
+                $scope.showFirst = true;
+                $scope.changePage = function (val) {
+                    $scope.showFirst= val;
+                }
+            })
+</script>
+</body>
+</html>

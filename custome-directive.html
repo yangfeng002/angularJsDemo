@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义指令</title>
+</head>
+<body ng-app="myApp">
+  <div class="main" ng-controller="myCtrl">
+      <!--自定义名称为my-title的指令  -->
+     <my-title></my-title>
+  </div>
+  <script type="text/javascript" src="src/lib/angular.js"></script>
+  <script>
+      angular.module("myApp",[])
+              .controller("myCtrl", function ($scope) {
+                  
+              })
+              .directive("myTitle", function () {
+                  
+              })
+  </script>
+</body>
+</html>
