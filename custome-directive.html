@@ -8,6 +8,10 @@
   <div class="main" ng-controller="myCtrl">
       <!--自定义名称为my-title的指令  -->
      <my-title></my-title>
+      <div my-title=""></div>
+      <!--以上两种方式是默认的-->
+      <div class="my-title"></div>
+      <!-- directive: my-title -->
   </div>
   <script type="text/javascript" src="src/lib/angular.js"></script>
   <script>
@@ -16,7 +20,16 @@
                   
               })
               .directive("myTitle", function () {
-                  
+                  /* console.log(this);
+                   console.log(arguments);*/
+                  //必须有返回值，返回值就是一个描述指令的对象
+                  return {
+                      restrict:"ECMA",//进行渲染
+                      template:'今天是5月17日',
+                     // templateUrl:'demo.html',
+                     // replace:true //该属性表示是否替换原来的元素
+                  }
+
               })
   </script>
 </body>
