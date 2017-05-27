@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修饰符界面</title>
+</head>
+<body>
+<body ng-app="myApp">
+<div class="main" ng-controller="myCtrl">
+    <!--自定义名称为my-title的指令  -->
+    <h4>{{msg}}</h4>
+    <div my-title></div>
+
+</div>
+<script type="text/javascript" src="src/lib/angular.js"></script>
+<script>
+    angular.module("myApp",[])
+            .controller("myCtrl", function ($scope) {
+
+            })
+            .directive("showMsg", function () {
+                /* console.log(this);
+                 console.log(arguments);*/
+                //必须有返回值，返回值就是一个描述指令的对象
+                return {
+                    restrict:"A",//进行渲染
+                    template:'<h4>{{title}}</h4>',
+                    // templateUrl:'demo.html',
+                    // replace:true //该属性表示是否替换原来的元素
+                    controller:function($scope,$element,$attrs){
+                        $scope.msg="child";
+                        $scope.title = "child title";
+                    },
+                    scope:{
+
+                    }
+                }
+
+            })
+</script>
+</body>
+</body>
+</html>
