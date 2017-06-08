@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>link编辑方法演示</title>
+</head>
+<body>
+     <div ng-app="myApp">
+        <!--重复三次循环-->
+         <div class="main" ng-controller="myCtrl">
+             <div repeat-num="3">
+                 <h3>昨晚下了一场大雨</h3>
+             </div>
+         </div>
+     </div>
+     <script type="text/javascript" src="src/lib/angular.js"></script>
+     <script type="text/javascript">
+         angular.module('myApp', [])
+                 //定义控制器
+                 .controller('myCtrl', function ($scope) {
+                     
+                 })
+                 //自定义指令
+                 .directive('repeatNum',function(){
+                     //定义返回对象
+                     return {
+                         restrict:'A',//返回值类型
+                         controller: function ($scope) {
+                            //定义作用域
+                             $scope.msg = "hello";
+                         },
+                         link: function () {
+                             console.log(this);
+                             console.log(arguments);
+                         }
+                     }
+                 })
+     </script>
+</body>
+</html>
