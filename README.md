@@ -1,5 +1,15 @@
 # angularJsDemo
 angularjs框架
+AngualrJs包含的模块：
+ng模块---默认的模块，几乎包含了angularjs的所有核心组件  * * * * *
+ngRoute模块---路由模块  * * * * *
+ngMessages---AngularJS表单验证模块 * * * *
+ngCookies---用于读取和写入浏览器的cookies * * * *
+ngResource ---当查询和发送数据到一个REST 服务器时，使用ngResource模块。 * * *
+ngSanitize ---ngSanitize模块可安全地在你的应用程序中解析和操作HTML数据。
+ngTouch	---ngRoute模块提供触摸事件，方便的应用于移动触摸设备。它的实现是实现是基于jQuery移动触摸事件处理。 * * *
+ngAnimate ---AngularJS的动画模块，使用ngAnimate各种核心指令能为你的应用程序提供动画效果。动画可使用css或者JavaScript回调函数。
+
 
 
 一、angular过滤器部分
