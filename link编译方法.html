@@ -29,9 +29,17 @@
                             //定义作用域
                              $scope.msg = "hello";
                          },
-                         link: function () {
-                             console.log(this);
-                             console.log(arguments);
+                         link: function (scope,jQLite,attrs) {
+                            //console.log(this);
+                            console.log(arguments);
+                             var num = attrs.repeatNum;//获取属性值
+                             var dom = jQLite.children();
+                             console.log(num);
+                             for(var i=0;i<num;i++){
+                                 //如果元素是引用类型（不是一个值）那么我们每次操作之前先克隆一下，来避免重复添加同一个元素
+                                 var child = dom.clone();
+                                 jQLite.append(child);
+                             }
                          }
                      }
                  })
